@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Home from './home/home';
 
@@ -17,10 +17,20 @@ const App = () => {
     id: userID
   }
 
+  useEffect(() => {
+    if (user.name != null) {
+      setUserName(userName)
+    }
+    if (user.id != null) {
+      setUserID(userID)
+    }
+
+  }, [userName, userID, user.id, user.name])
+
   return (
     <div className="App">
       <header className="App-header">
-        <Home setNameFunction={setUserName} setIDFunction={setUserID} user={user} />
+        <Home setNameFunction={setUserName} setIDFunction={setUserID} user={user} userName={userName} userID={userID} />
       </header>
     </div>
   );

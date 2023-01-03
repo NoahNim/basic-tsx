@@ -1,16 +1,14 @@
 import { User } from "../App"
 
-// type UserType = {
-
-// }
-
 interface HomeProps {
     setNameFunction: Function,
     setIDFunction: Function,
     user: User
+    userName: string | null
+    userID: number | null
 }
 
-const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
+const Home = ({ setNameFunction, setIDFunction, user, userName, userID }: HomeProps) => {
 
     const showNameFunction = (e: any) => {
         e.preventDefault();
@@ -26,8 +24,8 @@ const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
 
     return (
         <div>
-            <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.id === null ? "Show Name" : user.name}</button>
-            <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.name === null ? "Show ID" : user.id}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.name === null ? "Show Name" : userName}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.id === null ? "Show ID" : userID}</button>
         </div>
     )
 }
