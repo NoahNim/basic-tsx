@@ -18,12 +18,19 @@ const Home = () => {
     const showNameFunction = (e: any) => {
         e.preventDefault();
 
+        setUserName("Noah");
+    }
+
+    const showIDFunction = (e: any) => {
+        e.preventDefault();
+
+        setuserID(1);
     }
 
     return (
         <div>
-            <button style={{ width: "100px", height: "100px" }} >{userName === null ? "Show Name" : userName}</button>
-            <button style={{ width: "100px", height: "100px" }}>{userID === null ? "Show ID" : userID}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{userName === null ? "Show Name" : userName}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{userID === null ? "Show ID" : userID}</button>
         </div>
     )
 }
