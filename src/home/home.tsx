@@ -1,36 +1,33 @@
-import React, { useState } from "react";
+import { User } from "../App"
 
-const Home = () => {
-    // interface UserProps {
-    //     name: string,
-    //     id: number
-    // }
+// type UserType = {
 
-    const [userName, setUserName] = useState<string | null>(null)
-    const [userID, setuserID] = useState<number | null>(null)
+// }
 
-    // const user: UserProps = {
-    //     name: userName,
-    //     id: userID
-    // }
+interface HomeProps {
+    setNameFunction: Function,
+    setIDFunction: Function,
+    user: User
+}
 
+const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
 
     const showNameFunction = (e: any) => {
         e.preventDefault();
 
-        setUserName("Noah");
+        setNameFunction("Noah");
     }
 
     const showIDFunction = (e: any) => {
         e.preventDefault();
 
-        setuserID(1);
+        setIDFunction(1)
     }
 
     return (
         <div>
-            <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{userName === null ? "Show Name" : userName}</button>
-            <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{userID === null ? "Show ID" : userID}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.id === null ? "Show Name" : user.name}</button>
+            <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.name === null ? "Show ID" : user.id}</button>
         </div>
     )
 }
