@@ -9,12 +9,12 @@ interface HomeProps {
     userID: number | null
 }
 
-const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
+const Home = ({ setNameFunction, setIDFunction, user, userName }: HomeProps) => {
 
     const showNameFunction = (e: any) => {
         e.preventDefault();
 
-        setNameFunction("Noah");
+        user.name != null ? setNameFunction(userName) : setNameFunction("Noah")
     }
 
     const showIDFunction = (e: any) => {
