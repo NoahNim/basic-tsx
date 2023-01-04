@@ -27,7 +27,7 @@ const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
         <div>
             <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.name === null ? "Show Name" : user.name}</button>
             <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.id === null ? "Show ID" : user.id}</button>
-            <Form setNameFunction={setNameFunction} setIDFunction={setIDFunction} />
+            <Form setNameFunction={setNameFunction} />
         </div>
     )
 }
