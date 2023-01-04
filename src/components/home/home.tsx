@@ -1,3 +1,4 @@
+import React from "react"
 import { User } from "../../App"
 import Form from "./form"
 
@@ -11,13 +12,13 @@ interface HomeProps {
 
 const Home = ({ setNameFunction, setIDFunction, user, userName }: HomeProps) => {
 
-    const showNameFunction = (e: any) => {
+    const showNameFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 
         user.name != null ? setNameFunction(userName) : setNameFunction("Noah")
     }
 
-    const showIDFunction = (e: any) => {
+    const showIDFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 
         setIDFunction(1)
