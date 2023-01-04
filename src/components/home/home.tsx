@@ -1,4 +1,5 @@
-import { User } from "../App"
+import { User } from "../../App"
+import Form from "./form"
 
 interface HomeProps {
     setNameFunction: Function,
@@ -8,7 +9,7 @@ interface HomeProps {
     userID: number | null
 }
 
-const Home = ({ setNameFunction, setIDFunction, user, userName, userID }: HomeProps) => {
+const Home = ({ setNameFunction, setIDFunction, user }: HomeProps) => {
 
     const showNameFunction = (e: any) => {
         e.preventDefault();
@@ -26,6 +27,7 @@ const Home = ({ setNameFunction, setIDFunction, user, userName, userID }: HomePr
         <div>
             <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.name === null ? "Show Name" : user.name}</button>
             <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.id === null ? "Show ID" : user.id}</button>
+            <Form setNameFunction={setNameFunction} setIDFunction={setIDFunction} />
         </div>
     )
 }

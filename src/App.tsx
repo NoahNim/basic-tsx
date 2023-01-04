@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Home from './home/home';
+import Home from './components/home/home';
 
 export interface User {
   name: string | null,
