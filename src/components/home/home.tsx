@@ -1,6 +1,7 @@
 import React from "react"
 import { User } from "../../App"
 import Form from "./form"
+import Activity from "./activity"
 
 interface HomeProps {
     setNameFunction: Function,
@@ -29,6 +30,7 @@ const Home = ({ setNameFunction, setIDFunction, user, userName }: HomeProps) => 
             <button style={{ width: "100px", height: "100px" }} onClick={showNameFunction}>{user.name === null ? "Show Name" : user.name}</button>
             <button style={{ width: "100px", height: "100px" }} onClick={showIDFunction}>{user.id === null ? "Show ID" : user.id}</button>
             <Form setNameFunction={setNameFunction} />
+            <Activity />
         </div>
     )
 }

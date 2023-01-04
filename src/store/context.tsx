@@ -1,8 +1,8 @@
-import { produceWithPatches } from "immer";
 import { createContext, ReactNode, useState } from "react";
 
 interface ActivityContextInterface {
     activityData: Object
+    getActivity: Function
     // activity: string
     // participants: number
     // price: number
@@ -10,7 +10,7 @@ interface ActivityContextInterface {
 
 const ActivityCtx = createContext<ActivityContextInterface | null>(null);
 
-const ActivityContextProvider = ({ children }: { children: ReactNode, }, { activityData }: ActivityContextInterface) => {
+export const ActivityContextProvider = ({ children }: { children: ReactNode }, { activityData }: ActivityContextInterface) => {
     const [currActivityData, setCurrActivityData] = useState<Object>({});
 
     const getActivity = async () => {
@@ -31,6 +31,7 @@ const ActivityContextProvider = ({ children }: { children: ReactNode, }, { activ
         <ActivityCtx.Provider
             value={{
                 activityData: currActivityData,
+                getActivity
             }}>
             {children}
         </ActivityCtx.Provider>
