@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import ActivityCtx from "../../store/context";
 
 const Activity = () => {
@@ -27,12 +27,12 @@ const Activity = () => {
         price: null
     }
 
-    useEffect(() => {
-        if (newActivity.activity != null || newActivity.activity) {
-            setActivity([newActivity])
-            console.log(activities)
-        }
-    }, [activities, newActivity])
+    // useEffect(() => {
+    //     if (newActivity.activity != null || newActivity.activity) {
+    //         setActivity([newActivity])
+    //         console.log(activities)
+    //     }
+    // }, [activities, newActivity])
 
     const handleGetActivityButton = async (event: React.MouseEvent<HTMLButtonElement>) => {
 
@@ -58,7 +58,7 @@ const Activity = () => {
     return (
         <>
             <button style={{ width: "100px", height: "100px" }} onClick={handleGetActivityButton}>Get Activity</button>
-            {activities?.map((item) => {
+            {activities?.map((item: any) => {
                 console.log(item)
                 return (
                     <>
