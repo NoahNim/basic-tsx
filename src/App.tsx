@@ -19,10 +19,10 @@ const App = () => {
 
   useEffect(() => {
     if (user.name != null) {
-      setUserName(userName)
+      setUserName(user.name)
     }
     if (user.id != null) {
-      setUserID(userID)
+      setUserID(user.id)
     }
 
   }, [userName, userID, user.id, user.name])

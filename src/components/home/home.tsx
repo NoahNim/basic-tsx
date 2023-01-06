@@ -13,6 +13,7 @@ interface HomeProps {
 
 const Home = ({ setNameFunction, setIDFunction, user, userName }: HomeProps) => {
 
+
     const showNameFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
 

@@ -3,9 +3,6 @@ import { createContext, ReactNode, useState } from "react";
 interface ActivityContextInterface {
     activityData: Object
     getActivity: Function
-    // activity: string
-    // participants: number
-    // price: number
 }
 
 const ActivityCtx = createContext<ActivityContextInterface | null>(null);
